@@ -1,15 +1,20 @@
+#coding:utf-8
 import os
 
 def docs_dir():
     return os.path.split(__file__)
 
 def get_info(index):
+    """
+    type index: Int     64卦序号(1..64)
+    rtype:      List    readlines
+    """
     path = docs_dir()[0]
     name = "{path}/info/{index}.txt".format(path=path, index=index)
     try:
         f = open(name)
-        info = f.read()
+        lines = f.readlines()
         f.close()
-        return info
+        return lines
     except Exception, e:
-        return "..."
+        return None

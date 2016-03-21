@@ -4,7 +4,7 @@
 """BaGua
 
 Usage:
-  # bagua
+  bagua
   bagua <cheatsheet>
   bagua -r
   bagua -s <keyword>
