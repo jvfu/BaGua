@@ -14,7 +14,6 @@ setup(
     url          = '',
     packages=find_packages(),
     package_data = {
-        # 'cheat.cheatsheets': [f for f in os.listdir('cheat/cheatsheets') if '.' not in f]
     },
     include_package_data=True,
     zip_safe=True,
@@ -22,5 +21,5 @@ setup(
         'docopt >= 0.6.1',
         'pygments >= 1.6.0',
     ],
-    scripts          = ['bin/cheat'],
+    scripts          = ['bin/bagua'],
 )
