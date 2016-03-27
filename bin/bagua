@@ -4,7 +4,7 @@
 """BaGua
 
 Usage:
-  # bagua
+  bagua
   bagua <cheatsheet>
   bagua -r
   bagua -s <keyword>
@@ -13,11 +13,11 @@ Usage:
 太极八卦
 
 Examples:
-  To look up 'tar':
-  cheat tar
+  查看第一卦(乾卦)
+  bagua 1
   
-  To create or edit the cheatsheet for 'foo':
-  cheat -e foo
+  卜一卦
+  bagua -r
 
 Options:
   -r --random       卜一卦
@@ -35,8 +35,8 @@ if __name__ == '__main__':
 	if options["--random"]:
 		print shake_gua64()
 	elif options["--search"]:
-		print("search :", options['<keyword>'])
-	elif options["<cheatsheet>"] is None:
-		print shake_gua64()
+		print "search :", options['<keyword>']
+	# elif options["<cheatsheet>"] is None:
+	# 	print shake_gua64()
 	else:
 		show(int(options["<cheatsheet>"]))
