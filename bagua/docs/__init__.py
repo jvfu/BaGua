@@ -10,7 +10,7 @@ def get_info(index):
     rtype:      List    readlines
     """
     path = docs_dir()[0]
-    name = "{path}/info/{index}.txt".format(path=path, index=index)
+    name = "{path}/info/{index}".format(path=path, index=index)
     try:
         f = open(name)
         lines = f.readlines()
@@ -18,3 +18,4 @@ def get_info(index):
         return lines
     except Exception, e:
         return None
+

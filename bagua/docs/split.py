@@ -1,24 +1,34 @@
 #!coding=utf-8
 import os
 
-os.mkdir("info")
+def docs_dir():
+    return os.path.split(__file__)
 
 def create_file(index, content):
-    file_name = "info/{}.txt".format(index)
+    path, _ = docs_dir()
+    file_name = "{}/info/{}".format(path, index)
     f = open(file_name, "w")
     f.write(str(content))
     f.close()
 
-content = ""
-index = 0
-for line in open("zhouyi.txt"):
-    if "《易經》" in line:
-        if not content is "":
-            index += 1
-            create_file(index, content)
-            
-        content = ""
-    # else:
-    content += line
+def main():
+    content = ""
+    index = 0
+    path, _ = docs_dir()
+    os.system('rm -fr {}/info'.format(path))
+    os.mkdir("{}/info".format(path))
+    for line in open(path + "/zhouyi"):
+        if "《易經》" in line:
+            if not content is "":
+                index += 1
+                create_file(index, content)
+                
+            content = ""
+        # else:
+        content += line
+
+    create_file(64, content)
+
+if __name__ == '__main__':
+    main()
     
-create_file(64, content)

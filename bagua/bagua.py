@@ -47,3 +47,11 @@ def show(index):
         print symbol, '\t' * 2, info
 
     print get_url(index)
+
+def main():
+    from docs import split
+    split.main()
+
+if __name__ == '__main__':
+    main()
+
