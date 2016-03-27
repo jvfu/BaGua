@@ -1,9 +1,11 @@
 ﻿#-*- encoding: UTF-8 -*-
 from setuptools import setup, find_packages
 
+VERSION = '0.02'
+
 setup(
     name         = 'BaGua',
-    version      = '0.01',
+    version      = VERSION,
     author       = 'Floyda',
     author_email = 'floyda@163.com',
     license      = 'MIT',
