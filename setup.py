@@ -13,7 +13,7 @@ setup(
     long_description = '八卦是中国文化的基本哲学概念...',
     keywords='bagua chinese',
     classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-    url          = '',
+    url          = 'https://github.com/FloydaGithub/BaGua',
     packages=find_packages(),
     package_data = {
     },
