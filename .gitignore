@@ -1,5 +1,4 @@
-bagua/docs/info/
 *.pyc
-*test.py
 *.egg-info
 build/
+dist/
