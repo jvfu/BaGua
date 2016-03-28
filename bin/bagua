@@ -4,7 +4,6 @@
 """BaGua
 
 Usage:
-  bagua
   bagua <cheatsheet>
   bagua -r
   bagua -s <keyword>
@@ -30,7 +29,7 @@ from bagua import *
 from docopt import docopt
 
 if __name__ == '__main__':
-	options = docopt(__doc__, version='BaGua 0.0.1')
+	options = docopt(__doc__, version='BaGua {}'.format(VERSION))
 
 	if options["--random"]:
 		print shake_gua64()

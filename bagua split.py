@@ -6,7 +6,7 @@ def docs_dir():
 
 def create_file(index, content):
     path, _ = docs_dir()
-    file_name = "{}/info/{}".format(path, index)
+    file_name = "{}/docs/{}.txt".format(path, index)
     f = open(file_name, "w")
     f.write(str(content))
     f.close()
@@ -15,9 +15,12 @@ def main():
     content = ""
     index = 0
     path, _ = docs_dir()
-    os.system('rm -fr {}/info'.format(path))
-    os.mkdir("{}/info".format(path))
-    for line in open(path + "/zhouyi"):
+    os.system('rm -fr {}/docs'.format(path))
+    os.mkdir("{}/docs".format(path))
+    f = open('{}/docs/__init__.py'.format(path), 'w')
+    f.close()
+    f = open(path + "/zhouyi.txt")
+    for line in f:
         if "《易經》" in line:
             if not content is "":
                 index += 1
@@ -26,8 +29,9 @@ def main():
             content = ""
         # else:
         content += line
-
+        
     create_file(64, content)
+    f.close()
 
 if __name__ == '__main__':
     main()

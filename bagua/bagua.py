@@ -1,9 +1,26 @@
 #coding:utf-8
-# from utils import *
 import random
-from docs import *
+import os
 from utils import *
 
+def docs_dir():
+    return os.path.split(__file__)
+
+def get_info(index):
+    """
+    type index: Int     64卦序号(1..64)
+    rtype:      List    readlines
+    """
+    path = docs_dir()[0]
+    name = "{path}/docs/{index}.txt".format(path=path, index=index)
+    try:
+        f = open(name)
+        lines = f.readlines()
+        f.close()
+        return lines
+    except Exception, e:
+        return None
+        
 def shake_yao():
     return [random.randint(2, 3) for x in xrange(3)]
 
@@ -48,10 +65,10 @@ def show(index):
 
     print get_url(index)
 
-def main():
-    from docs import split
-    split.main()
+# def main():
+#     import split
+#     split.main()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
 
